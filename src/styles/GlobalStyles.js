@@ -19,7 +19,8 @@ html {
 body {
     margin: 0;
     font-family:  'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: ${props => props.theme.fonts.weights.regular};
+    overflow: hidden;
 }
 
 h1,
