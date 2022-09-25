@@ -51,6 +51,10 @@ ul {
     padding: 0;
     list-style: none;
 }
+
+.icon {
+    fill: currentColor;
+}
 `;
 
 export default GlobalStyles;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
   .headerContainer {
-    width: ${props => props.theme.breakpoints.mobile};
+    width: ${props => props.theme.breakpoints.mobile + 'px'};
     height: 120px;
     margin: 0 auto;
     padding-top: 22px;
@@ -57,5 +57,3 @@ export const LogoLink = styled.a`
     }
   }
 `;
-
-export const LogoSpan = styled.span``;

@@ -1,12 +1,11 @@
-import Container from 'components/Container';
 import Header from 'components/Header';
+import Hero from 'components/Hero';
 
 function App() {
   return (
-    <div className="App" style={{ 'background-color': 'black' }}>
-      {/* <Container> */}
+    <div className="App" style={{ backgroundColor: 'black' }}>
       <Header />
-      {/* </Container> */}
+      <Hero />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 const theme = {
   breakpoints: {
-    mobile: '320px',
-    tablet: '768px',
-    desktop: '1360px',
+    mobile: '320',
+    tablet: '768',
+    desktop: '1360',
   },
   fonts: {
     weights: {
