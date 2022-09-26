@@ -11,7 +11,7 @@ function Hero() {
         <Button
           type="button"
           iconId="arrow"
-          btnClassName="btn"
+          btnClassName="heroBtn"
           onClick={() => {
             console.log('click');
           }}

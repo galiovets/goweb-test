@@ -20,7 +20,6 @@ body {
     margin: 0;
     font-family:  'Open Sans', sans-serif;
     font-weight: ${props => props.theme.fonts.weights.regular};
-    overflow: hidden;
 }
 
 h1,

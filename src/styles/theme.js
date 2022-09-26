@@ -14,6 +14,7 @@ const theme = {
     lightTextColor: '#FFFFFF',
     mainAccentColor: '#28A745',
     mainHoverAccentColor: '#2EBF4F',
+    btnBackground: '#F4F4F4',
   },
 };
 

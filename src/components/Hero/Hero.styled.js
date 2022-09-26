@@ -8,15 +8,13 @@ export const HeroStyled = styled.section`
     margin-right: auto;
     padding: 162px 20px 104px;
     text-align: center;
-    @media screen and (min-width: 768px) {
-      background-color: red;
-    }
   }
 
-  .btn {
+  .heroBtn {
+    margin-right: auto;
+    margin-left: auto;
     color: ${props => props.theme.colors.lightTextColor};
     background-color: ${props => props.theme.colors.mainAccentColor};
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus {

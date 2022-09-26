@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const ButtonWrapper = styled.button`
   display: flex;
   align-items: center;
-  margin-right: auto;
-  margin-left: auto;
   padding: 16px 32px;
   max-width: 186px;
   font-weight: ${props => props.theme.fonts.weights.regular};
@@ -14,6 +12,8 @@ export const ButtonWrapper = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   .content {
     margin-left: ${({ iconId }) => (iconId ? '8px' : '0')};
