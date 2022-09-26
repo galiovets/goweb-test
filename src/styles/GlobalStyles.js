@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    margin: 0;
+    margin: 0 auto;
     font-family:  'Open Sans', sans-serif;
     font-weight: ${props => props.theme.fonts.weights.regular};
 }
@@ -26,6 +26,7 @@ h1,
 h2,
 h3 {
     margin: 0;
+    
 }
 
 p {

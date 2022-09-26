@@ -12,9 +12,11 @@ const theme = {
   },
   colors: {
     lightTextColor: '#FFFFFF',
+    darkTextColor: '#333333',
     mainAccentColor: '#28A745',
+    addAccentColor: '#0284D0',
     mainHoverAccentColor: '#2EBF4F',
-    btnBackground: '#F4F4F4',
+    lightBtnBackground: '#F4F4F4',
   },
 };
 

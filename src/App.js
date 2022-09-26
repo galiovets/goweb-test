@@ -1,6 +1,10 @@
 import Header from 'components/Header';
 import Hero from 'components/Hero';
 import About from 'components/About';
+import Cases from 'components/Cases';
+import Blog from 'components/Blog';
+import Team from 'components/Team';
+import Footer from 'components/Footer';
 
 function App() {
   return (
@@ -8,6 +12,10 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <Cases />
+      <Blog />
+      <Team />
+      <Footer />
     </div>
   );
 }
