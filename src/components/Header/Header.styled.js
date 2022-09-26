@@ -8,18 +8,6 @@ export const HeaderStyled = styled.header`
     padding-top: 22px;
     padding-left: 22px;
     padding-right: 22px;
-
-    /* @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-      padding-top: 16px;
-    }
-
-    @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
-      padding-top: 32px;
-    } */
   }
 `;
 

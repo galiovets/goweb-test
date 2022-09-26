@@ -1,8 +1,8 @@
-import { SocialList, SocialItem, SocialLink } from './SocialLinks.styled';
 import { BsFacebook } from 'react-icons/bs';
 import { BsTwitter } from 'react-icons/bs';
 import { BsYoutube } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { SocialList, SocialItem, SocialLink } from './SocialLinks.styled';
 
 function SocialLinks({ className, facebook, twitter, youtube, linkedin }) {
   return (
