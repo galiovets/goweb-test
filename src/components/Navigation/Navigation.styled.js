@@ -5,19 +5,21 @@ export const NavList = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  &:not(:last-child) {
-    margin-right: 12px;
+  @media screen and (max-width: ${props => props.theme.breakpoints.tablet - 1 + 'px'}) {
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
   }
 
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet}) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
     &:not(:last-child) {
       margin-right: 20px;
     }
   }
 
-  @media screen and (min-width: ${props => props.theme.breakpoints.desktop}) {
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
     &:not(:last-child) {
-      margin-right: 40px;
+      margin-right: 43px;
     }
   }
 `;
