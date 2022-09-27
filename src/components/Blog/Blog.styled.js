@@ -36,7 +36,7 @@ export const BlogWrapper = styled.section`
 
     @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
       padding-top: 80px;
-      padding-bottom: 86px;
+      padding-bottom: 80px;
     }
   }
 

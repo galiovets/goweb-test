@@ -6,13 +6,14 @@ import showcaseJpg1x from 'assets/images/home/showcase.jpg';
 
 export const HeroStyled = styled.section`
   color: ${props => props.theme.colors.lightTextColor};
+  background-color: ${props => props.theme.colors.lightTextColor};
 
   .heroContainer {
     margin-left: auto;
     margin-right: auto;
     padding: 160px 20px 104px;
     text-align: center;
-
+    background-color: ${props => props.theme.colors.darkTextColor};
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

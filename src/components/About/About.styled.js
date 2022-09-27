@@ -6,6 +6,29 @@ export const AboutWrapper = styled.section`
 
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
     display: flex;
+    /* width: 690px;
+    padding-top: 62px;
+    padding-bottom: 62px; */
+  }
+
+  .aboutContainer {
+    padding-top: 79px;
+    padding-bottom: 79px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
+      display: flex;
+      width: 690px;
+      padding-top: 62px;
+      padding-bottom: 62px;
+    }
+
+    @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
+      padding-top: 80px;
+      padding-bottom: 86px;
+    }
   }
 
   .aboutPicWrapper {
@@ -17,25 +40,6 @@ export const AboutWrapper = styled.section`
     @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
       width: 670px;
       height: 460px;
-    }
-  }
-
-  .aboutContainer {
-    padding-top: 79px;
-    padding-bottom: 79px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
-      width: 690px;
-      padding-top: 62px;
-      padding-bottom: 62px;
-    }
-
-    @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
-      padding-top: 80px;
-      padding-bottom: 86px;
     }
   }
 

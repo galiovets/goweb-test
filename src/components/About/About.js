@@ -11,14 +11,20 @@ function About() {
   return (
     <AboutWrapper>
       <PictureWrapper
-        className="aboutPicWrapper"
+        picsClassName="aboutPicWrapper"
         srcsetWebp={`${aboutWebp1x} 1x, ${aboutWebp2x} 2x`}
         srcsetJpg={`${aboutJpg1x} 1x, ${aboutJpg2x} 2x,`}
         src={aboutJpg1x}
         alt="Team"
       />
       <SectionContent
+        // isPicture={true}
         className="aboutContainer"
+        // picsClassName="aboutPicWrapper"
+        // srcsetWebp={`${aboutWebp1x} 1x, ${aboutWebp2x} 2x`}
+        // srcsetJpg={`${aboutJpg1x} 1x, ${aboutJpg2x} 2x,`}
+        // src={aboutJpg1x}
+        // alt="Team"
         preTitle="What you are looking for"
         title="We provide bespoke solutions"
         text="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, ipsum dignissimos quae laudantium asperiores nam aliquid impedit harum illum dolore explicabo ab dolores itaque rerum temporibus doloribus iste maiores deleniti?"
