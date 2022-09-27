@@ -1,15 +1,8 @@
 import styled from 'styled-components';
 
-export const AboutWrapper = styled.section`
+export const AboutSection = styled.section`
   color: ${props => props.theme.colors.lightTextColor};
   background-color: ${props => props.theme.colors.mainAccentColor};
-
-  @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
-    display: flex;
-    /* width: 690px;
-    padding-top: 62px;
-    padding-bottom: 62px; */
-  }
 
   .aboutContainer {
     padding-top: 79px;
@@ -45,6 +38,8 @@ export const AboutWrapper = styled.section`
 
   .aboutBtn {
     font-size: 16px;
+    justify-content: center;
+    width: 156px;
     margin-top: 24px;
     color: ${props => props.theme.colors.lightTextColor};
     border: 1px solid ${props => props.theme.colors.lightTextColor};
@@ -56,5 +51,17 @@ export const AboutWrapper = styled.section`
       background-color: ${props => props.theme.colors.lightBtnBackground};
       border: 1px solid ${props => props.theme.colors.mainAccentColor};
     }
+  }
+`;
+
+export const AboutWrapper = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
+    display: flex;
+  }
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
+    max-width: ${props => props.theme.breakpoints.desktop + 'px'};
   }
 `;
