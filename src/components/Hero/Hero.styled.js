@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import showcaseJpg1x from 'assets/images/home/showcase.jpg';
-import showcaseJpg2x from 'assets/images/home/showcase@2x.jpg';
-import showcaseWebp1x from 'assets/images/home/showcase.webp';
 import showcaseWebp2x from 'assets/images/home/showcase@2x.webp';
+import showcaseWebp1x from 'assets/images/home/showcase.webp';
+import showcaseJpg2x from 'assets/images/home/showcase@2x.jpg';
+import showcaseJpg1x from 'assets/images/home/showcase.jpg';
 
 export const HeroStyled = styled.section`
   color: ${props => props.theme.colors.lightTextColor};
