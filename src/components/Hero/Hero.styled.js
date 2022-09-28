@@ -18,7 +18,7 @@ export const HeroStyled = styled.section`
     background-position: center;
     background-size: cover;
 
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       -webkit-image-set(url(${showcaseWebp2x}) 2x, url(${showcaseWebp1x}) 1x, url(${showcaseJpg2x})
             2x, url(${showcaseJpg1x}) 1x);
 

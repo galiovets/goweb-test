@@ -1,6 +1,18 @@
 import styled from 'styled-components';
 
 export const HeaderStyled = styled.header`
+  ${props =>
+    props.scroll
+      ? `position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.7);`
+      : 'position: absolute;'}
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+
   .headerContainer {
     @media screen and (max-width: ${props => props.theme.breakpoints.tablet - 1 + 'px'}) {
       width: ${props => props.theme.breakpoints.mobile + 'px'};
