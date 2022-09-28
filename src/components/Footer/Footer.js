@@ -3,7 +3,7 @@ import Container from 'components/Container';
 import SocialLinks from 'components/SocialLinksList';
 import socialLinks from 'data/socialLinks';
 
-function Footer() {
+const Footer = () => {
   return (
     <FooterStyled>
       <Container className="footerContainer">
@@ -19,6 +19,6 @@ function Footer() {
       </Container>
     </FooterStyled>
   );
-}
+};
 
 export default Footer;

@@ -3,7 +3,7 @@ import SectionContent from 'components/SectionContent';
 import CasesList from './CasesList';
 import casesImages from 'data/casesImages';
 
-function Cases() {
+const Cases = () => {
   return (
     <CasesWrapper id="cases">
       <SectionContent
@@ -15,6 +15,6 @@ function Cases() {
       <CasesList items={casesImages} />
     </CasesWrapper>
   );
-}
+};
 
 export default Cases;

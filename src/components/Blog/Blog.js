@@ -24,7 +24,7 @@ function UseWindowWidth() {
   return width;
 }
 
-function Blog() {
+const Blog = () => {
   const width = UseWindowWidth();
 
   return (
@@ -121,6 +121,6 @@ function Blog() {
       </BlogWrapper>
     </BlogSection>
   );
-}
+};
 
 export default Blog;

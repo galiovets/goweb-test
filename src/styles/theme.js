@@ -17,6 +17,9 @@ const theme = {
     addAccentColor: '#0284D0',
     mainHoverAccentColor: '#2EBF4F',
     lightBtnBackground: '#F4F4F4',
+    inputColor: '#F5F5F5',
+    inputPlaceholder: '#808080',
+    error: '#EB5757',
   },
 };
 

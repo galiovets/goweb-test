@@ -2,7 +2,7 @@ import { HeroStyled, Title, Text } from './Hero.styled';
 import Container from 'components/Container';
 import Button from 'components/Button';
 
-function Hero() {
+const Hero = () => {
   return (
     <HeroStyled id="home">
       <Container className="heroContainer">
@@ -23,6 +23,6 @@ function Hero() {
       </Container>
     </HeroStyled>
   );
-}
+};
 
 export default Hero;

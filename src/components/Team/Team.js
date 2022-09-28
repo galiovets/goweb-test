@@ -3,7 +3,7 @@ import SectionContent from 'components/SectionContent';
 import TeamList from './TeamList';
 import teamInfo from 'data/team';
 
-function Team() {
+const Team = () => {
   return (
     <TeamWrapper>
       <SectionContent
@@ -15,6 +15,6 @@ function Team() {
       <TeamList items={teamInfo} />
     </TeamWrapper>
   );
-}
+};
 
 export default Team;

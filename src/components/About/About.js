@@ -7,7 +7,7 @@ import aboutJpg2x from 'assets/images/home/people@2x.jpg';
 import SectionContent from 'components/SectionContent';
 import Button from 'components/Button';
 
-function About() {
+const About = () => {
   return (
     <AboutSection id="about">
       <AboutWrapper>
@@ -36,6 +36,6 @@ function About() {
       </AboutWrapper>
     </AboutSection>
   );
-}
+};
 
 export default About;

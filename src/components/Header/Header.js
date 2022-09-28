@@ -4,7 +4,7 @@ import Container from 'components/Container';
 import Icon from 'components/Icon';
 import Navigation from 'components/Navigation';
 
-function Header() {
+const Header = () => {
   const [animateHeader, setAnimateHeader] = useState(false);
 
   useEffect(() => {
@@ -34,6 +34,6 @@ function Header() {
       </Container>
     </HeaderStyled>
   );
-}
+};
 
 export default Header;
