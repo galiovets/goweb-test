@@ -19,6 +19,13 @@ export const FooterStyled = styled.footer`
   .footerList {
     align-self: center;
   }
+
+  .footerSocLink {
+    &:hover,
+    &:focus {
+      color: ${props => props.theme.colors.mainAccentColor};
+    }
+  }
 `;
 
 export const FooterText = styled.p`

@@ -4,7 +4,7 @@ import Button from 'components/Button';
 
 function Hero() {
   return (
-    <HeroStyled>
+    <HeroStyled id="home">
       <Container className="heroContainer">
         <Title>The Sky Is The Limit</Title>
         <Text>We provide world class financial assistance</Text>

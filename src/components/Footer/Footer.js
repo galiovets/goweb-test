@@ -8,7 +8,8 @@ function Footer() {
     <FooterStyled>
       <Container className="footerContainer">
         <SocialLinks
-          className="footerList"
+          listClassName="footerList"
+          linkClassName="footerSocLink"
           facebook={socialLinks.facebook}
           twitter={socialLinks.twitter}
           youtube={socialLinks.youtube}

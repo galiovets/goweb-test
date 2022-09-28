@@ -18,7 +18,7 @@ export const HeroStyled = styled.section`
     background-position: center;
     background-size: cover;
 
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       -webkit-image-set(url(${showcaseWebp2x}) 2x, url(${showcaseWebp1x}) 1x, url(${showcaseJpg2x})
             2x, url(${showcaseJpg1x}) 1x);
 
@@ -44,10 +44,11 @@ export const HeroStyled = styled.section`
     margin-left: auto;
     color: ${props => props.theme.colors.lightTextColor};
     background-color: ${props => props.theme.colors.mainAccentColor};
+    opacity: 0.9;
 
     &:hover,
     &:focus {
-      background-color: ${props => props.theme.colors.mainHoverAccentColor};
+      opacity: 1;
     }
   }
 `;

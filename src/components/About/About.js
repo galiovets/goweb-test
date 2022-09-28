@@ -9,7 +9,7 @@ import Button from 'components/Button';
 
 function About() {
   return (
-    <AboutSection>
+    <AboutSection id="about">
       <AboutWrapper>
         <PictureWrapper
           picsClassName="aboutPicWrapper"

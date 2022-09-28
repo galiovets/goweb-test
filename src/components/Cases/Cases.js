@@ -5,7 +5,7 @@ import casesImages from 'data/casesImages';
 
 function Cases() {
   return (
-    <CasesWrapper>
+    <CasesWrapper id="cases">
       <SectionContent
         className="casesContainer"
         preTitle="This is what we do"

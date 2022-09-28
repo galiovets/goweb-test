@@ -6,7 +6,7 @@ export const HeaderStyled = styled.header`
       ? `position: fixed;
         top: 0;
         width: 100vw;
-        background-color: rgba(0, 0, 0, 0.7);`
+        background-color: rgba(0, 0, 0, 0.8);`
       : 'position: absolute;'}
   width: 100vw;
   left: 50%;

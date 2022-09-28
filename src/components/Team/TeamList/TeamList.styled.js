@@ -21,14 +21,6 @@ export const List = styled.ul`
     padding-left: 28px;
     padding-right: 28px;
   }
-
-  img {
-    margin-bottom: 16px;
-
-    @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
-      margin-bottom: 14px;
-    }
-  }
 `;
 
 export const Item = styled.li`
@@ -39,9 +31,72 @@ export const Item = styled.li`
     margin-bottom: 30px;
   }
 
+  &:hover,
+  &:focus {
+    .teamImgThumb {
+      box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
+
+      @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {
     &:not(:last-child) {
       margin-bottom: 0;
+    }
+  }
+
+  .teamImgThumb {
+    position: relative;
+    overflow: hidden;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 16px;
+
+    @media screen and (min-width: ${props => props.theme.breakpoints.desktop + 'px'}) {
+      margin-bottom: 14px;
+    }
+
+    &:hover .teamSocList,
+    &:focus .teamSocList {
+      opacity: 1;
+    }
+  }
+
+  .teamImg {
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .teamSocList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .teamSocLink {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
     }
   }
 `;

@@ -25,10 +25,17 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
+  opacity: 1;
   cursor: pointer;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:not(:last-child) {
     margin-bottom: 8px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
   }
 
   @media screen and (min-width: ${props => props.theme.breakpoints.tablet + 'px'}) {

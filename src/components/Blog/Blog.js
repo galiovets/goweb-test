@@ -28,7 +28,7 @@ function Blog() {
   const width = UseWindowWidth();
 
   return (
-    <BlogSection>
+    <BlogSection id="blog">
       <BlogWrapper>
         {width <= 767 ? (
           <>
