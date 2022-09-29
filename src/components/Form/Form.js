@@ -43,13 +43,13 @@ const encode = data => {
 
 const Form = () => {
   const onSubmit = values => {
-    console.log(values);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...values }),
     })
       .then(() => {
+        alert('Success!');
         formik.resetForm();
       })
       .catch(error => alert(error));
@@ -85,6 +85,7 @@ const Form = () => {
           src={contactJpg1x}
           alt="contact us"
         />
+
         <FormStyled onSubmit={formik.handleSubmit} data-netlify="true" name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <Title>Request Callback</Title>
