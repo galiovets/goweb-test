@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import {
   FormSection,
   FormWrapper,
@@ -42,29 +42,32 @@ const encode = data => {
 };
 
 const Form = () => {
-  const onSubmit = evt => {
+  const onSubmit = values => {
+    console.log(values);
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formik.initialValues }),
+      body: encode({ 'form-name': 'contact', ...values }),
     })
-      .then(() => alert('Success!'))
+      .then(() => {
+        formik.resetForm();
+      })
       .catch(error => alert(error));
-
-    evt.preventDefault();
-
-    toast.success("Thank you, we'll call you back!", {
-      duration: 3500,
-      style: {
-        borderRadius: '10px',
-        background: 'white',
-        color: 'black',
-        padding: '10px',
-        textAlign: 'center',
-      },
-    });
-    formik.resetForm();
   };
+
+  // const onSubmit = () => {
+  //   toast.success("Thank you, we'll call you back!", {
+  //     duration: 3500,
+  //     style: {
+  //       borderRadius: '10px',
+  //       background: 'white',
+  //       color: 'black',
+  //       padding: '10px',
+  //       textAlign: 'center',
+  //     },
+  //   });
+  //   formik.resetForm();
+  // };
 
   const formik = useFormik({
     initialValues,
