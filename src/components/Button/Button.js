@@ -1,5 +1,5 @@
-import Icon from 'components/Icon';
 import { ButtonWrapper } from './Button.styled';
+import Icon from 'components/Icon';
 
 function Button({
   type,

@@ -118,7 +118,7 @@ export const ErrorWrapper = styled.div`
   display: flex;
   position: absolute;
   left: 8px;
-  bottom: -6px;
+  bottom: -5px;
   color: ${props => props.theme.colors.error};
 
   .formIcon {

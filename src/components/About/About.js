@@ -1,11 +1,12 @@
 import { AboutSection, AboutWrapper } from './About.styled';
 import PictureWrapper from 'components/PictureWrapper';
+import SectionContent from 'components/SectionContent';
+import Button from 'components/Button';
+
 import aboutWebp1x from 'assets/images/home/people.webp';
 import aboutWebp2x from 'assets/images/home/people@2x.webp';
 import aboutJpg1x from 'assets/images/home/people.jpg';
 import aboutJpg2x from 'assets/images/home/people@2x.jpg';
-import SectionContent from 'components/SectionContent';
-import Button from 'components/Button';
 
 const About = () => {
   return (
