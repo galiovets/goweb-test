@@ -67,9 +67,9 @@ const Form = () => {
           alt="contact us"
         />
         <FormStyled onSubmit={formik.handleSubmit} name="contact" method="post">
-          <Title>Request Callback</Title>
           <input type="hidden" name="form-name" value="contact" />
-          <Label htmlFor="name">
+          <Title>Request Callback</Title>
+          <Label>
             <Input
               id="name"
               name="name"
@@ -79,7 +79,7 @@ const Form = () => {
               value={formik.values.name}
             />
           </Label>
-          <Label htmlFor="email">
+          <Label>
             <Input
               id="email"
               name="email"
