@@ -66,8 +66,9 @@ const Form = () => {
           src={contactJpg1x}
           alt="contact us"
         />
-        <FormStyled onSubmit={formik.handleSubmit}>
+        <FormStyled onSubmit={formik.handleSubmit} name="contact" method="post">
           <Title>Request Callback</Title>
+          <input type="hidden" name="form-name" value="contact" />
           <Label htmlFor="name">
             <Input
               id="name"
