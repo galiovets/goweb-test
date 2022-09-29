@@ -35,8 +35,24 @@ const validate = values => {
   return errors;
 };
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 const Form = () => {
-  const onSubmit = () => {
+  const onSubmit = evt => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formik.initialValues }),
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error));
+
+    evt.preventDefault();
+
     toast.success("Thank you, we'll call you back!", {
       duration: 3500,
       style: {
@@ -66,7 +82,7 @@ const Form = () => {
           src={contactJpg1x}
           alt="contact us"
         />
-        <FormStyled onSubmit={formik.handleSubmit} name="contact" method="post">
+        <FormStyled onSubmit={formik.handleSubmit} data-netlify="true" name="contact" method="post">
           <input type="hidden" name="form-name" value="contact" />
           <Title>Request Callback</Title>
           <Label>
