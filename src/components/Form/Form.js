@@ -43,31 +43,28 @@ const validate = values => {
 
 const Form = () => {
   const onSubmit = (values, submitProps) => {
-    // toast.success("Thank you, we'll call you back!", {
-    //     duration: 3500,
-    //     style: {
-    //       borderRadius: '10px',
-    //       background: 'white',
-    //       color: 'black',
-    //       padding: '10px',
-    //       textAlign: 'center',
-    //     },
-    //   });
-
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', ...values }),
     })
       .then(() => {
-        alert('Success!');
         submitProps.resetForm();
       })
       .catch(error => alert(error));
   };
 
   // const onSubmit = () => {
-  //
+  //   toast.success("Thank you, we'll call you back!", {
+  //     duration: 3500,
+  //     style: {
+  //       borderRadius: '10px',
+  //       background: 'white',
+  //       color: 'black',
+  //       padding: '10px',
+  //       textAlign: 'center',
+  //     },
+  //   });
   //   formik.resetForm();
   // };
 
