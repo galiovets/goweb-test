@@ -1,4 +1,4 @@
-import { useFormik } from 'formik';
+import { useFormik, Formik } from 'formik';
 // import toast from 'react-hot-toast';
 import {
   FormSection,
@@ -18,6 +18,12 @@ import contactWebp2x from 'assets/images/home/contact@2x.webp';
 import contactJpg1x from 'assets/images/home/contact.jpg';
 import contactJpg2x from 'assets/images/home/contact@2x.jpg';
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
+};
+
 const initialValues = {
   name: '',
   email: '',
@@ -35,14 +41,19 @@ const validate = values => {
   return errors;
 };
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
 const Form = () => {
-  const onSubmit = values => {
+  const onSubmit = (values, submitProps) => {
+    // toast.success("Thank you, we'll call you back!", {
+    //     duration: 3500,
+    //     style: {
+    //       borderRadius: '10px',
+    //       background: 'white',
+    //       color: 'black',
+    //       padding: '10px',
+    //       textAlign: 'center',
+    //     },
+    //   });
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -50,30 +61,21 @@ const Form = () => {
     })
       .then(() => {
         alert('Success!');
-        formik.resetForm();
+        submitProps.resetForm();
       })
       .catch(error => alert(error));
   };
 
   // const onSubmit = () => {
-  //   toast.success("Thank you, we'll call you back!", {
-  //     duration: 3500,
-  //     style: {
-  //       borderRadius: '10px',
-  //       background: 'white',
-  //       color: 'black',
-  //       padding: '10px',
-  //       textAlign: 'center',
-  //     },
-  //   });
+  //
   //   formik.resetForm();
   // };
 
-  const formik = useFormik({
-    initialValues,
-    validate,
-    onSubmit,
-  });
+  // const formik = useFormik({
+  //   initialValues,
+  //   validate,
+  //   onSubmit,
+  // });
 
   return (
     <FormSection id="contact">
@@ -85,38 +87,27 @@ const Form = () => {
           src={contactJpg1x}
           alt="contact us"
         />
-
-        <FormStyled onSubmit={formik.handleSubmit} data-netlify="true" name="contact" method="post">
-          <input type="hidden" name="form-name" value="contact" />
-          <Title>Request Callback</Title>
-          <Label>
-            <Input
-              id="name"
-              name="name"
-              type="text"
-              placeholder="Enter your name"
-              onChange={formik.handleChange}
-              value={formik.values.name}
-            />
-          </Label>
-          <Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="Enter email*"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <ErrorWrapper>
-                <Icon iconId="warning" className="formIcon" width="20px" height="20px" />
-                <ErrorText>{formik.touched.email && formik.errors.email}</ErrorText>
-              </ErrorWrapper>
-            ) : null}
-          </Label>
-          <Button type="submit" btnClassName="formBtn" content="Send" />
-        </FormStyled>
+        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
+          {({ errors, touched }) => (
+            <FormStyled data-netlify="true" name="contact" method="POST">
+              <input type="hidden" name="form-name" value="contact" />
+              <Title>Request Callback</Title>
+              <Label>
+                <Input id="name" name="name" type="text" placeholder="Enter your name" />
+              </Label>
+              <Label>
+                <Input id="email" name="email" type="email" placeholder="Enter email*" />
+                {touched.email && errors.email ? (
+                  <ErrorWrapper>
+                    <Icon iconId="warning" className="formIcon" width="20px" height="20px" />
+                    <ErrorText>{touched.email && errors.email}</ErrorText>
+                  </ErrorWrapper>
+                ) : null}
+              </Label>
+              <Button type="submit" btnClassName="formBtn" content="Send" />
+            </FormStyled>
+          )}
+        </Formik>
       </FormWrapper>
     </FormSection>
   );
