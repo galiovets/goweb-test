@@ -8,22 +8,42 @@ function SocialLinks({ listClassName, linkClassName, facebook, twitter, youtube,
   return (
     <SocialList className={listClassName}>
       <SocialItem>
-        <SocialLink href={facebook} className={linkClassName} target="_blank">
+        <SocialLink
+          href={facebook}
+          className={linkClassName}
+          target="_blank"
+          aria-label="Link to Facebook"
+        >
           <BsFacebook className="socialIcon" size="2.1em" />
         </SocialLink>
       </SocialItem>
       <SocialItem>
-        <SocialLink href={twitter} className={linkClassName} target="_blank">
+        <SocialLink
+          href={twitter}
+          className={linkClassName}
+          target="_blank"
+          aria-label="Link to Twitter"
+        >
           <BsTwitter className="socialIcon" size="2.1em" />
         </SocialLink>
       </SocialItem>
       <SocialItem>
-        <SocialLink href={youtube} className={linkClassName} target="_blank">
+        <SocialLink
+          href={youtube}
+          className={linkClassName}
+          target="_blank"
+          aria-label="Link to Youtube"
+        >
           <BsYoutube className="socialIcon" size="2.1em" />
         </SocialLink>
       </SocialItem>
       <SocialItem>
-        <SocialLink href={linkedin} className={linkClassName} target="_blank">
+        <SocialLink
+          href={linkedin}
+          className={linkClassName}
+          target="_blank"
+          aria-label="Link to LinkedIn"
+        >
           <FaLinkedinIn className="socialIcon" size="2.1em" />
         </SocialLink>
       </SocialItem>

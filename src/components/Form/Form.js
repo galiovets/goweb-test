@@ -1,4 +1,4 @@
-import { useFormik, Formik } from 'formik';
+import { Formik } from 'formik';
 // import toast from 'react-hot-toast';
 import {
   FormSection,
@@ -17,6 +17,7 @@ import contactWebp1x from 'assets/images/home/contact.webp';
 import contactWebp2x from 'assets/images/home/contact@2x.webp';
 import contactJpg1x from 'assets/images/home/contact.jpg';
 import contactJpg2x from 'assets/images/home/contact@2x.jpg';
+import contactSchema from 'models/contactSchema';
 
 const encode = data => {
   return Object.keys(data)
@@ -27,18 +28,6 @@ const encode = data => {
 const initialValues = {
   name: '',
   email: '',
-};
-
-const validate = values => {
-  const errors = {};
-
-  if (!values.email) {
-    errors.email = 'This is a required field';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
-  }
-
-  return errors;
 };
 
 const Form = () => {
@@ -54,7 +43,7 @@ const Form = () => {
       .catch(error => alert(error));
   };
 
-  // const onSubmit = () => {
+  // const onSubmit = (values, { resetForm }) => {
   //   toast.success("Thank you, we'll call you back!", {
   //     duration: 3500,
   //     style: {
@@ -65,14 +54,8 @@ const Form = () => {
   //       textAlign: 'center',
   //     },
   //   });
-  //   formik.resetForm();
+  //   resetForm();
   // };
-
-  // const formik = useFormik({
-  //   initialValues,
-  //   validate,
-  //   onSubmit,
-  // });
 
   return (
     <FormSection id="contact">
@@ -84,20 +67,46 @@ const Form = () => {
           src={contactJpg1x}
           alt="contact us"
         />
-        <Formik initialValues={initialValues} validate={validate} onSubmit={onSubmit}>
-          {({ errors, touched }) => (
-            <FormStyled data-netlify="true" name="contact" method="POST">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={contactSchema}
+          validateOnBlur
+          onSubmit={onSubmit}
+        >
+          {props => (
+            <FormStyled
+              onSubmit={props.handleSubmit}
+              data-netlify="true"
+              name="contact"
+              method="POST"
+            >
               <input type="hidden" name="form-name" value="contact" />
               <Title>Request Callback</Title>
               <Label>
-                <Input id="name" name="name" type="text" placeholder="Enter your name" />
+                <Input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Enter your name"
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.name}
+                />
               </Label>
               <Label>
-                <Input id="email" name="email" type="email" placeholder="Enter email*" />
-                {touched.email && errors.email ? (
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter email*"
+                  onChange={props.handleChange}
+                  onBlur={props.handleBlur}
+                  value={props.values.email}
+                />
+                {props.touched.email && props.errors.email ? (
                   <ErrorWrapper>
                     <Icon iconId="warning" className="formIcon" width="20px" height="20px" />
-                    <ErrorText>{touched.email && errors.email}</ErrorText>
+                    <ErrorText>{props.touched.email && props.errors.email}</ErrorText>
                   </ErrorWrapper>
                 ) : null}
               </Label>

@@ -72,6 +72,10 @@ export const Item = styled.li`
     &:focus .teamSocList {
       opacity: 1;
     }
+
+    &:focus-within {
+      outline: 2px solid ${props => props.theme.colors.mainAccentColor};
+    }
   }
 
   .teamImg {
